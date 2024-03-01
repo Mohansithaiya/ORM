@@ -35,8 +35,8 @@ class books(models.Model):
 	price=models.IntegerField();
 class booksAdmin(admin.ModelAdmin):
 	list_display=("name","author","id","copies","price");
-
-
+```
+```
 admin.py
 from django.contrib import admin
 from .models import books,booksAdmin
