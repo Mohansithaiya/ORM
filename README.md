@@ -1,8 +1,12 @@
 # Ex03 Django ORM Web Application
-## Date: 10-09-2024
+## Date: 13-09-2024
 
 ## AIM
 To develop a Django application to store and retrieve data from a Book database using Object Relational Mapping(ORM).
+
+## ENTITY RELATIONSHIP DIAGRAM
+![alt text](<Screenshot 2024-09-13 202807.png>)
+
 
 ## DESIGN STEPS
 
@@ -23,25 +27,25 @@ Execute Django admin and create details for 10 books
 models.py
 from django.db import models
 from django.contrib import admin
-class books(models.Model):
-	name=models.CharField(max_length=20);
-	author=models.CharField(max_length=20);
-	id=models.IntegerField(primary_key=True);
-	copies=models.IntegerField();
-	price=models.IntegerField();
-class booksAdmin(admin.ModelAdmin):
-	list_display=("name","author","id","copies","price");
+class Bankloans(models.Model):
+	Loan_id=models.IntegerField(primary_key=True);
+	Name=models.CharField(max_length=30);
+	Loan_amt=models.IntegerField();
+	Mail_id=models.CharField(max_length=30);
+	Account_no=models.IntegerField();
+class BankloansAdmin(admin.ModelAdmin):
+	list_display=("Loan_id","Name","Loan_amt","Mail_id","Account_no");
+
 ```
 ```
 admin.py
 from django.contrib import admin
-from .models import books,booksAdmin
-admin.site.register(books,booksAdmin)
+from .models import Bankloans,BankloansAdmin
+admin.site.register(Bankloans,BankloansAdmin)
 ```
 
 ## OUTPUT
-![alt text](<Screenshot 2024-09-10 205651.png>)
-
+![alt text](<Screenshot 2024-09-13 195925.png>)
 
 
 ## RESULT
